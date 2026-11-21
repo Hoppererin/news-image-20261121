@@ -1,11 +1,13 @@
-// news-image-20261121 — "The World Today": one image summing up Saturday
+// news-image-20261121 v2 — "The World Today": one image summing up Saturday
 // 21 November 2026 — 46 real stories from 7 regions, drawn as a newspaper
 // front page.
-// The image (entry.png, 1024x1024) is rendered in this repo by render.py
-// (PIL + DejaVu, deterministic — re-running it writes byte-identical bytes);
-// this program only copies it to /output/entry.png. Node 22, standard library
-// only, no network, no randomness, no timestamps. It never deletes /output:
-// the grader mounts /output, so removing it would fail the run.
+//
+// The image (entry.png, 1024x1024) is drawn in this repo by render.py
+// (Python + Pillow + DejaVu, deterministic — running it twice writes
+// byte-identical bytes). This program only copies that file to the output
+// directory. Node 22, standard library only, no network, no randomness,
+// no timestamps. It never deletes the output directory: the grader mounts
+// /output, so removing it would fail the run.
 // Run locally: mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
 import { copyFileSync, mkdirSync } from "node:fs";
